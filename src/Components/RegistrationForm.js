@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Registration.module.css';
 
 export default function SignUpPage() {
   const [username, setUsername] = useState('');
@@ -65,6 +66,8 @@ export default function SignUpPage() {
           <p className="footer"><Link to="/">Back to Homepage</Link>.</p>
         </footer>
       </div>
+
+
     </div>
   );
 };
