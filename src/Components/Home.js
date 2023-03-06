@@ -98,11 +98,11 @@ const Homepage=()=>{
 
   return (
     <div className="App">
-      <h1>Movieflix</h1>
+      <h1>NINJA-MOVIES</h1>
       <Header />
-      <Link to="/add" className="btn btn-main">
+      {/* <Link to="/add" className="btn btn-main">
                 + Add
-              </Link>
+              </Link> */}
       <div style={{display:"flex", autoresize: "max-width: 100%", height: "auto", border: "0.5px, solid"}}>
           {movieArray}
           </div>

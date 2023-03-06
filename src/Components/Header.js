@@ -6,29 +6,29 @@ export const Header = () => {
     <header>
       <div className="container">
         <div className="inner-content">
-          <div className="brand">
-            <Link to="/">WatchList</Link>
-          </div>
+          {/* <div className="brand">
+            <Link to="/">ack</Link>
+          </div> */}
 
           <ul className="nav-links">
-            <li>
-              <Link to="/">Watch List</Link>
-            </li>
+            {/* <li>
+              <Link to="/">Back</Link>
+            </li> */}
 
-            <li>
+            {/* <li>
               <Link to="/watched">Watched</Link>
-            </li>
+            </li> */}
 
-            <li>
+            {/* <li>
               <Link to="/add" className="btn btn-main">
-                + Add
+                Add
               </Link>
             </li>
             <li>
               <Link to="/search" className="btn btn-main">
-                + Search
+                Search
               </Link>
-              </li>
+              </li> */}
           </ul>
         </div>
       </div>

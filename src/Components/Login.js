@@ -1,15 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-//import '../App.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Login.module.css';
+
 export default function Login() {
     return (
         <div className="text-center login-body m-5 auto">
-        <div className="login-form">
-            <h2 className="title-sign">Sign in </h2>
+        <div className="login-form onSubmit={handleSubmit}">
+            <h2 className="title-sign">LogIn </h2>
             <form className="form" action="/home">
                 <p className="paragraph">
-                    <label className="labels">Username or email address</label><br/>
-                    <input type="text" name="first_name" required />
+                    <label className="labels"> email address</label><br/>
+                    <input type="text" name="user_name" required />
                 </p>
                 <p className="paragraph">
                     <label ClassName="labels">Password</label>
