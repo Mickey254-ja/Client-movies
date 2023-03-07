@@ -1,44 +1,35 @@
-// import React from "react";
-// import { useState } from "react";
-// import { useCallback } from "react";
-// const searchBar = {
-//   display: "flex",
-//   justifyContent: "right",
-// };
-// const input = {
-//   background: "rgba(255, 255, 255, 0.2)",
-//   border: "1px solid rgba(255, 255, 255, 0.5)",
-//   color: "#D9D9D9",
-//   margin: "2px",
-//   padding: "5px",
-//   marginBottom: "30px",
-//   fontSize: "15px",
-// };
-// function Search({  setSearchTerm }) {
-//   const [searchTerm, setSearch] = useState("");
-//   const handleChange = useCallback((event) => {
-//     setSearch(event.target.value);
-//   }, []);
-//   function handleSearch(e) {
-//     e.preventDefault();
-//     setSearchTerm(searchTerm);
-//   }
-//   return (
-//     <div style={searchBar}>
-//       <input
-//         type="text"
-//         name="search"
-//         placeholder="keyword/title"
-//         value={searchTerm}
-//         style={input}
-//         onChange={handleChange}
-//       />
-//       <button onClick={handleSearch} style={input}>
-//         SEARCH
-//       </button>
-//     </div>
-//   );
-// }
-// export default Search;
+import React, { useState } from 'react';
+import './Search.css'
 
+function Search() {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
 
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const searchMovies = () => {
+    const url = `https://mikki-movies-production.up.railway.app/search/${query}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => setResults(data.results))
+      .catch(error => console.log(error));
+  };
+
+  return (
+    <div>
+      <input type="text" value={query} onChange={handleInputChange} />
+      <button onClick={searchMovies}>Search</button>
+
+      <ul>
+        {results.map(movie => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Search;

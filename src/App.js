@@ -6,7 +6,7 @@ import RegistrationForm from './Components/RegistrationForm'
 import ForgotPassword from './Components/ForgotPassword'
 import Home from './Components/Home'
 import MovieCard from './Components/MovieCard'
-// import AddMovie from './Components/AddMovie'
+import Search from './Components/Search'
 import MovieForm from './Components/MovieForm'
 import MovieList from './Components/MovieList'
 import './App.css'
@@ -25,6 +25,7 @@ export default function App() {
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/search" element={<Search />}/>
           <Route path="/card" element={<MovieCard />} />
           {/* <Route path="/add-movie" element={<AddMovie />} /> */}
           <Route path="/update-movie" element={<UpdateMovie />} />

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MovieForm from "./MovieForm";
+import Search from "./Search";
 
 export const Header = () => {
   return (
@@ -25,11 +26,11 @@ export const Header = () => {
                 AddMovie
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/search" className="btn btn-main">
                 Search
               </Link>
-              </li> */} 
+             </li>
           </ul>
         </div>
       </div>

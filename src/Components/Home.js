@@ -6,55 +6,10 @@ import { Header } from "./Header";
 import { Link } from "react-router-dom"
 
 let API_key="&api_key=db95773a7fb212ba790d71f6adac0e7e";
-let base_url="https://api.themoviedb.org/3";
+let base_url="https://mikki-movies-production.up.railway.app";
 let url=base_url+"/discover/movie?sort_by=popularity.desc"+API_key;
 let arr=["Popular","Theatre","Kids","Drama","Comedie"];
 
- function SearchMovie() {
-  const [query, setQuery] = useState('');
-  const [movies, setMovies] = useState([]);
-  const SearchMovies = async (e) => {
-    e.preventDefault();
-    console.log('submitting');
-    const url = `https:9292/movies`;
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      setMovies(data.results);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  return (
-    <>
-    
-      <form className="form" onSubmit={SearchMovies}>
-        <label className="label" htmlFor="query">
-          Movie Title:
-        </label>
-        <input
-          className="input"
-          type="text"
-          name="query"
-          placeholder="search a movie"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button className="button">Search</button>
-        <Link to="/search" className="btn btn-main">
-                + search
-              </Link>
-      </form>
-      <div className="card-list">
-        {/* {movies
-          .filter((movie) => movie.poster_path)
-          .map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))} */}
-      </div>
-    </>
-  );
-}
 const Homepage=()=>{
     const [movieData,setData]=useState([]);
     const [url_set,setUrl]=useState(url);
@@ -70,31 +25,30 @@ const Homepage=()=>{
     fetch("https://mikki-movies-production.up.railway.app/movies")
     .then(response=>response.json())
     .then(data=>setMovies(data))
-    fetch("http://localhost:9292/users")
+    fetch("https://mikki-movies-production.up.railway.app/users")
     .then(response=>response.json())
     .then(data=> setUsers(data))
   },[])
 
   const movieArray=movies.map((movie)=>{
-    return <div>
+    return <div >
          <img src={movie.image_url}/>
          <h2>{movie.title}</h2>
          <p>{movie.genre}</p>
          <p>{movie.year}</p>
          <p>{movie.rating}</p>
-        <p>{movie.description}</p>
       </div>
 
   })
 
-  const userArray=users.map((user)=>{
-    return <div>
-    <h2>{user.name}</h2>
-    <p>{user.username}</p>
-    <p>{user.password}</p>
-    <p>{user.email}</p>
-    </div>
-  })
+  // const userArray=users.map((user)=>{
+  //   return <div>
+  //   <h2>{user.name}</h2>
+  //   <p>{user.username}</p>
+  //   <p>{user.password}</p>
+  //   <p>{user.email}</p>
+  //   </div>
+  // })
 
   return (
     <div className="App">
@@ -103,12 +57,12 @@ const Homepage=()=>{
       {/* <Link to="/add" className="btn btn-main">
                 + Add
               </Link> */}
-      <div style={{display:"flex", autoresize: "max-width: 100%", height: "auto", border: "0.5px, solid"}}>
-          {movieArray}
-          </div>
-     <h1>user</h1>
-    {userArray}
-  </div>
+         <div >
+            {movieArray}
+         </div>
+     
+      </div>
+  
  
   );
   
@@ -168,7 +122,7 @@ const Homepage=()=>{
         {
           (movieData.length===0)?<p className="notfound">Not Found</p>: movieData.map((res,pos)=>{
             return(
-              <MovieCard info={res} key={pos}/>
+            <MovieCard info={res} key={pos}/>
             )
           })
         }

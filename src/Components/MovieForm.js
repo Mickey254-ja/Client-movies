@@ -55,7 +55,9 @@ function MovieForm() {
         <label htmlFor="imageUrl">Image URL:</label>
         <input type="text" id="imageUrl" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
 
-        <button type="submit">Submit</button>
+        <button type="submit">Submit
+        <p>Click once!</p>
+        </button>
       </form>
       <Link to="/movie-list" className="btn btn-main"
       >View My Movies
