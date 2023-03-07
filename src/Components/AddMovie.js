@@ -39,7 +39,7 @@
 // }
 
 const addMovie = async (title, genre, year, rating, userId, imageUrl) => {
-  const url = `http://localhost:9292/newmovie/${userId}`;
+  const url = `https://mikki-movies-production.up.railway.app/newmovie/${userId}`;
   const response = await fetch(url, {
     method: 'POST',
     headers: {

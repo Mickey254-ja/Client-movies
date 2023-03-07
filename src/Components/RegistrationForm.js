@@ -10,7 +10,7 @@ export default function SignUpPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:9292/newuser', {
+      const response = await fetch('https://mikki-movies-production.up.railway.app/newuser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

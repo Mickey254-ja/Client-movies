@@ -6,9 +6,9 @@ import RegistrationForm from './Components/RegistrationForm'
 import ForgotPassword from './Components/ForgotPassword'
 import Home from './Components/Home'
 import MovieCard from './Components/MovieCard'
-import AddMovie from './Components/AddMovie'
+// import AddMovie from './Components/AddMovie'
 import MovieForm from './Components/MovieForm'
-// import WatchLater from './Components/WatchLater'
+import MovieList from './Components/MovieList'
 import './App.css'
 import UpdateMovie from './Components/UpdateMovie'
 import { Header } from './Components/Header'
@@ -26,10 +26,10 @@ export default function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/home" element={<Home />} />
           <Route path="/card" element={<MovieCard />} />
-          <Route path="/add-movie" element={<AddMovie />} />
+          {/* <Route path="/add-movie" element={<AddMovie />} /> */}
           <Route path="/update-movie" element={<UpdateMovie />} />
           <Route path="/movie-form" element={<MovieForm />} /> 
-          {/* <Route path="/watch-later" element={<WatchLater />} /> */}
+          <Route path="/movie-list" element={<MovieList />} />
       
         
         </Routes>

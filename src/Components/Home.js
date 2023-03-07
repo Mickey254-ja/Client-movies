@@ -67,7 +67,7 @@ const Homepage=()=>{
     const[movies, setMovies] = useState([])
   const[users, setUsers] = useState([])
   useEffect(()=>{
-    fetch("http://localhost:9292/movies")
+    fetch("https://mikki-movies-production.up.railway.app/movies")
     .then(response=>response.json())
     .then(data=>setMovies(data))
     fetch("http://localhost:9292/users")
